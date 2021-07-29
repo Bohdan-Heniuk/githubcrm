@@ -1,0 +1,38 @@
+version: "3.3"
+
+networks:
+  app-tier:
+    driver: bridge
+
+services:
+  client:
+    image: client
+    stdin_open: true
+    ports :
+      - "3000:3000"
+  db:
+    image: mysql
+    platform: linux/x86_64
+    expose:
+      - "3306"
+    ports:
+      - "3307:3306"
+    networks:
+      - app-tier      
+    environment:
+      - MYSQL_DATABASE=githubcrm
+      - MYSQL_USER=username
+      - MYSQL_PASSWORD=password
+      - MYSQL_ROOT_PASSWORD=paswword
+      - MYSQL_ROOT_HOST=db
+  backend:
+    depends_on:
+      - db
+    build: ./server
+    command: bash -c 'while !</dev/tcp/db/3306; do sleep 1; done; npx knex migrate:latest ./server/knexfile.js && npm run dev'
+    ports:
+      - "8000:8000"
+    networks:
+      - app-tier 
+    env_file:
+      - ./server/.env 

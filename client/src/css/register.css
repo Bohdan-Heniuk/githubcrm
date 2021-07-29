@@ -1,0 +1,86 @@
+.register{
+    background-color: #FAFAFA;
+}
+.register__inner {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.register__form {
+    text-align: center;
+    padding: 30px;
+    border: 1px solid #DBDBDB;
+    width: 300px;
+    background-color: #fff;
+}
+.form__paragraph {
+    color: #AB8E8E;
+    margin-bottom: 20px;
+}
+.form__button button{
+    width: 100%;
+    padding: 10px 0;
+    justify-content: center;
+    border: none;
+    border-radius: 4px;
+    background-color: #0095F6;
+    color: #fff;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.form__or {
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.or {
+    color: #8E8E9D;
+    font-weight: 500;
+    margin: 0 10px;
+}
+.line {
+    display:block;
+    width:200px; /*or whatever width you want the effect of <hr>*/
+    border-top: 1px solid #ccc
+}
+.form__inputs {
+    margin: 20px 0;
+}
+.form__inputs input{
+    margin: 5px 0;
+    text-indent: 10px;
+    padding: 10px 0;
+    background-color: #FAFAFA;
+    border: 1px solid #DBDBDB;
+    width: 100%;
+}
+
+.register-btn {
+    margin-bottom: 15px;
+}
+
+.form__politic {
+    color: #848181;
+    font-size: 12px;
+}
+
+.form__login-link {
+    margin-top: 10px;
+}
+
+.form__login-link a{
+    text-decoration: none;
+    margin-left: 5px;
+    color: #8495F6;
+}
+
+.error {
+    font-size: 12px;
+    margin: 10px 0;
+}
